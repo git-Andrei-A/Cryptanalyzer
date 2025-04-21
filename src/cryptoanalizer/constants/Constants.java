@@ -1,7 +1,6 @@
 package cryptoanalizer.constants;
 
 import java.io.File;
-import java.nio.file.FileSystem;
 
 public class Constants {
     private static final String rus = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
