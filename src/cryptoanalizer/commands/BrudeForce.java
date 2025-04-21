@@ -3,11 +3,11 @@ package cryptoanalizer.commands;
 import cryptoanalizer.entity.Result;
 import cryptoanalizer.entity.ResultCode;
 
-public class Decoder implements Action {
+public class BrudeForce implements Action {
 
     @Override
     public Result execute (String[] parameters) {
-        // TODO Decoder something do
-        return new Result("decode all right", ResultCode.OK);
+        // TODO BrudeForece something do
+        return new Result("BrudeForece complite", ResultCode.OK);
     }
 }

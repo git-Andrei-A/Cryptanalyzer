@@ -5,6 +5,7 @@ import cryptoanalizer.entity.Result;
 public class ConsoleRunner {
     public static void main(String[] args) {
 
+        // encode text.txt encode.txt 12
         Application application = new Application();
 
         Result result = application.run(args);
@@ -12,6 +13,3 @@ public class ConsoleRunner {
         System.out.println(result);
     }
 }
-//int key = 3; // <<<< args
-//String text = "тест"; // <<<< args
-//String result = ""; // <<<< args
