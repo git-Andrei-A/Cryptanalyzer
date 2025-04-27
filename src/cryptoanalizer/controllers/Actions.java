@@ -1,5 +1,6 @@
 package cryptoanalizer.controllers;
 
+import cryptoanalizer.commands.BruteForce;
 import cryptoanalizer.commands.Decoder;
 import cryptoanalizer.commands.Encoder;
 import cryptoanalizer.commands.Action;
@@ -7,7 +8,8 @@ import cryptoanalizer.exceptions.AppException;
 
 public enum Actions {
     ENCODE(new Encoder()),
-    DECODE(new Decoder());
+    DECODE(new Decoder()),
+    BRUTEFORCE(new BruteForce());
 
     private final Action action;
 

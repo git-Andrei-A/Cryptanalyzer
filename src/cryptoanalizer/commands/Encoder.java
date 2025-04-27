@@ -4,7 +4,7 @@ import cryptoanalizer.entity.Result;
 import cryptoanalizer.entity.ResultCode;
 import cryptoanalizer.utils.Input;
 import cryptoanalizer.utils.Output;
-import cryptoanalizer.utils.Coders;
+import cryptoanalizer.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,8 +25,8 @@ public class Encoder implements Action {
             System.out.println(list.get(i));
         }*/
 
-        Coders ec = new Coders();
-        ArrayList<String> encodedList = ec.encodeCaesar(list, Integer.parseInt(parameters[2]));
+        Utils ec = new Utils();
+        ArrayList<String> encodedList = ec.codeCaesar(list, Integer.parseInt(parameters[2]));
 
         /*for (int i = 0; i < encodedList.size(); i++) { // source file
             System.out.println(encodedList.get(i));

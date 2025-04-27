@@ -2,7 +2,7 @@ package cryptoanalizer.commands;
 
 import cryptoanalizer.entity.Result;
 import cryptoanalizer.entity.ResultCode;
-import cryptoanalizer.utils.Coders;
+import cryptoanalizer.utils.Utils;
 import cryptoanalizer.utils.Input;
 import cryptoanalizer.utils.Output;
 
@@ -22,16 +22,14 @@ public class Decoder implements Action {
         Input rf = new Input();
         ArrayList<String> list =  rf.readFile(parameters[0]);
 
-        for (int i = 0; i < list.size(); i++) { // source file for decode
+        /*for (int i = 0; i < list.size(); i++) { // source file for decode
             System.out.println(list.get(i));
-        }
+        }*/
 
-        Coders dc = new Coders();
-        ArrayList<String> encodedList = dc.encodeCaesar(list, Integer.parseInt(parameters[2]));
+        Utils dc = new Utils();
+        int key = - Integer.parseInt(parameters[2]);
+        ArrayList<String> encodedList = dc.codeCaesar(list, key);
 
-        for (int i = 0; i < encodedList.size(); i++) { // source file
-            System.out.println(encodedList.get(i));
-        }
 
         Output o = new Output();
         o.writeFile(encodedList, parameters[1]);
