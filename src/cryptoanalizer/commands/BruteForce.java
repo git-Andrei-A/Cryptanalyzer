@@ -7,11 +7,9 @@ import cryptoanalizer.utils.Utils;
 import cryptoanalizer.utils.Input;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 import static cryptoanalizer.constants.Constants.ALPHABET;
-import static cryptoanalizer.constants.Constants.TXT_FOLDER;
 
 /*
 1. Load reference text (2-nd part of "War and Peace") and calculate reference Frequency of words HashMap <String, int>.
@@ -26,8 +24,6 @@ public class BruteForce implements Action {
 
     @Override
     public Result execute (String[] parameters) {
-
-        System.out.println("parameters: " + Arrays.toString(parameters) + "\nTXT_FOLDER: " + TXT_FOLDER);
 
         Input rf = new Input();
         ArrayList<String> list =  rf.readFile(parameters[0]);
@@ -60,8 +56,6 @@ public class BruteForce implements Action {
         Output o = new Output();
         o.writeFile(successDecodedList, parameters[2]);
 
-        System.out.println("FINAL maxintersection: " + maxIntersection);
-
-        return new Result("BruteForece complite", ResultCode.OK);
+        return new Result("BruteForece complite. Decryption key is:" + successKey, ResultCode.OK);
     }
 }
