@@ -16,7 +16,6 @@ public class Utils {
             StringBuilder sb = new StringBuilder();
             for (int j = 0; j < line.length(); j++) {
                 char ch = line.charAt(j);
-                //System.out.println("Исходный символ: " + ch);
                 sb.append(CircularString (ALPHABET, ch, key));
             }
             result.add(sb.toString());
@@ -30,7 +29,6 @@ public class Utils {
 
         index = ((index + key) % length + length) % length;
 
-        //System.out.println("Закодированный символ: " +  s.charAt(index));
         return s.charAt(index);
     }
 
@@ -48,20 +46,20 @@ public class Utils {
     }
 
     public double calculateSimilarity(HashMap<String, Integer> masterMap, HashMap<String, Integer> testMap) {
-        Set<String> masterKeys = masterMap.keySet(); // Возвращает множество ключей коллекции
+        Set<String> masterKeys = masterMap.keySet(); // Returns a set of keys of a collection
         Set<String> testKeys = testMap.keySet();
 
         Set<String> intersection = new HashSet<>(masterKeys);
-        intersection.retainAll(testKeys); // Оставляет только элементы, которые есть и в текущем множестве masterKeys, и в testKeys
+        intersection.retainAll(testKeys); // Keeps only elements that are in both the current masterKeys set and testKeys
 
         Set<String> union = new HashSet<>(masterKeys);
-        union.addAll(testKeys); // Добавляет все элементы в  union (а там уже masterKeys)  из  коллекции testKeys
+        union.addAll(testKeys); // Adds all elements to the union (and there are already masterKeys) from the testKeys collection
 
-        if (union.isEmpty()) return 0.0; // защита от деления на 0
+        if (union.isEmpty()) return 0.0; // Divide by 0 protection
 
-        if (intersection.isEmpty()) return 1.0; //идея подсказала, вроде хорошо  выглядит
+        if (intersection.isEmpty()) return 1.0; // complete match
 
-        return (double) intersection.size() / union.size(); // и чем больше это число тем больше сходство
+        return (double) intersection.size() / union.size(); // the higher this number, the greater the similarity.
     }
     
 }

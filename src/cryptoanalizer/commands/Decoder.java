@@ -22,10 +22,6 @@ public class Decoder implements Action {
         Input rf = new Input();
         ArrayList<String> list =  rf.readFile(parameters[0]);
 
-        /*for (int i = 0; i < list.size(); i++) { // source file for decode
-            System.out.println(list.get(i));
-        }*/
-
         Utils dc = new Utils();
         int key = - Integer.parseInt(parameters[2]);
         ArrayList<String> encodedList = dc.codeCaesar(list, key);

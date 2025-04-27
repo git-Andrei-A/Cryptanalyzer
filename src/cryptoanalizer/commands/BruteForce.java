@@ -54,8 +54,13 @@ public class BruteForce implements Action {
                 successDecodedList.addAll(decodedList);
             }
 
+
+        }
+
         Output o = new Output();
         o.writeFile(successDecodedList, parameters[2]);
+
+        System.out.println("FINAL maxintersection: " + maxIntersection);
 
         return new Result("BruteForece complite", ResultCode.OK);
     }
