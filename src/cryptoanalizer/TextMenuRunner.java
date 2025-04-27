@@ -20,7 +20,7 @@ public class TextMenuRunner {
 
             switch (choice) {
                 case "1":
-                    System.out.print("Enter file name to encode (in folder /texts): ");
+                    System.out.print("Enter file name to encode in folder /texts ( example: text.txt ):");
                     String encodeFile = scanner.nextLine().trim();
 
                     System.out.print("Enter length of key to encode: ");
@@ -31,7 +31,7 @@ public class TextMenuRunner {
                     System.out.println(encodeResult);
                     break;
                 case "2":
-                    System.out.print("Enter encoded file name (in folder /texts): ");
+                    System.out.print("Enter encoded file name in folder /texts ( example: encoded.txt ):");
                     String encodedFile = scanner.nextLine().trim();
 
                     System.out.print("Enter length of key to decode: ");
@@ -42,10 +42,10 @@ public class TextMenuRunner {
                     System.out.println(decodeResult);
                     break;
                 case "3":
-                    System.out.print("Enter file name for example (reference file in folder /texts):");
+                    System.out.print("Enter reference language file in folder /texts ( example: reference.txt ):");
                     String referenceFile = scanner.nextLine().trim();
 
-                    System.out.print("Enter encoded file name: ");
+                    System.out.print("Enter encoded file name  ( example: encoded.txt ): ");
                     String brutForceFile = scanner.nextLine().trim();
 
                     String[] brutForceArgs = {"bruteforce", referenceFile, brutForceFile, "brutForceDecrypted.txt"};
@@ -56,6 +56,10 @@ public class TextMenuRunner {
                 case "4":
                     System.out.println("Exit...");
                     return;
+
+                default:
+                    System.out.println("\nWrong choice. Only digit 1 - 4\n");
+                    break;
             }
         }
     }
