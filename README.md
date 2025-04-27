@@ -2,7 +2,7 @@
 
 Authtor Andrei Arsenev (andrei@arsenev.pro);
 
-Java SDK 23;
+Java SDK 21 (Microsoft Open JDK);
 
 ## Released: Encryption/Decryption/Bruteforce DecryptioniIn two modes:
 
@@ -49,6 +49,3 @@ And use app dialog:
 5. BrutForce
    
 7. Exit
-
-
-
