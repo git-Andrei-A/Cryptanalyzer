@@ -6,9 +6,7 @@ import cryptoanalizer.entity.Result;
 public class MainController {
 
     public Result doAction(String actionName, String[] parameters) {
-        // actionName == encode
-        //  parameters  = {encode text.txt encode.txt 12}
-        Action action = Actions.find(actionName);
+        Action action = Actions.find(actionName); // command
         return action.execute(parameters);
     }
 

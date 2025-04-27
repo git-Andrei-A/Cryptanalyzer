@@ -1,3 +1,14 @@
+/**
+ * 1. Load reference text (2-nd part of "War and Peace") and calculate reference Frequency of words HashMap <String, int>.
+ * 2. In cycle make decryption of encrypted file by all keys of ALPHABET (from 1 to alphabet length - 1):
+ * -  split into words by space (taking the assumption space is the most frequent symbol);
+ * - calculate  current frequency of words;
+ * - compare reference frequency  and current frequency, save the best decryption;
+ * 3. Write  decryption.
+ * @author Andrei Arsenev
+ * @version 1.0
+ */
+
 package cryptoanalizer.commands;
 
 import cryptoanalizer.entity.Result;
@@ -10,15 +21,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import static cryptoanalizer.constants.Constants.ALPHABET;
-
-/*
-1. Load reference text (2-nd part of "War and Peace") and calculate reference Frequency of words HashMap <String, int>.
-2. In cycle make decryption of encrypted file by all keys of ALPHABET (from 1 to alphabet length - 1):
--  split into words by space (taking the assumption space is the most frequent symbol);
-- calculate  current frequency of words;
-- compare reference frequency  and current frequency, save the best decryption;
-3. Write  decryption.
-*/
 
 public class BruteForce implements Action {
 
@@ -56,6 +58,9 @@ public class BruteForce implements Action {
         Output o = new Output();
         o.writeFile(successDecodedList, parameters[2]);
 
-        return new Result("BruteForece complite. Decryption key is:" + successKey, ResultCode.OK);
+        return new Result("BruteForce complitet. Decryption key is:" + successKey*-1 + " Created file ../texts/brutForceDecrypted.txt", ResultCode.OK);
     }
 }
+
+
+

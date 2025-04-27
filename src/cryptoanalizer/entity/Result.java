@@ -11,9 +11,7 @@ public class Result {
 
     @Override
     public String toString() {
-        return "Result{" +
-                "massage='" + massage + '\'' +
-                ", resultCode=" + resultCode +
-                '}';
+        return "\nResult: " + massage + "\n" +
+                "resultCode=" + resultCode + "\n";
     }
 }
